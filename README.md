@@ -5,7 +5,12 @@
 
 **Pós-Graduação em Machine Learning, Deep Learning e Inteligência Artificial**<br>
 **Disciplina:** Operacionalização de Modelos com MLOps<br>
-**Aluno:** Deyvison Ramos
+**Aluno:** Deyvison Ramos<br>
+[**Projeto no Github**](https://github.com/deyvisonramos/fundamento_ml/tree/operacionalizacao_modelos)<br>
+
+> **o projeto está na branch "operacionalizacao_modelos". O link leva diretamente para a branch correta.
+
+[**Apresentação em Vídeo**](https://drive.google.com/drive/folders/1VdpkHmv2W1hJoCCDD7l8YlCVKDohCWGK?usp=sharing)
 
 <p>
   <img src="https://img.shields.io/badge/python-3.11%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python">
