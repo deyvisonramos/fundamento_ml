@@ -1,0 +1,28 @@
+# Ambiente Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Conda
+.conda/
+
+# MLflow (artefatos e banco de dados gerados localmente)
+mlruns/
+mlflow.db
+
+# Modelos gerados (o run_id é suficiente para recriar)
+models/champion_run_id.txt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini

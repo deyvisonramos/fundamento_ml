@@ -1,0 +1,68 @@
+data:
+  raw_path: "data/raw/bank.csv"
+  target: "deposit"
+  positive_label: "yes"
+  test_size: 0.2
+  random_state: 42
+
+features:
+  numeric:
+    - age
+    - balance
+    - day
+    - duration
+    - campaign
+    - pdays
+    - previous
+  categorical:
+    - job
+    - marital
+    - education
+    - default
+    - housing
+    - loan
+    - contact
+    - month
+    - poutcome
+  leakage_risk:
+    - duration  # disponível apenas após a ligação — risco de vazamento operacional
+
+mlflow:
+  experiment_name: "bank_marketing_classification"
+  tracking_uri: "mlruns"
+
+cross_validation:
+  n_splits: 5
+  shuffle: true
+  scoring: "f1"
+
+models:
+  gradient_boosting:
+    n_estimators: 100
+    learning_rate: 0.1
+    max_depth: 3
+    subsample: 0.85
+    min_samples_leaf: 5
+    random_state: 42
+  random_forest:
+    n_estimators: 100
+    max_depth: 10
+    min_samples_leaf: 2
+    class_weight: "balanced"
+    random_state: 42
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    class_weight: "balanced"
+    probability: true
+
+dimensionality_reduction:
+  pca:
+    variance_threshold: 0.95
+  lda:
+    n_components: 1
+
+business_metrics:
+  decision_threshold: 0.5
+  campaign_cost_per_contact: 5.0
+  revenue_per_conversion: 200.0
