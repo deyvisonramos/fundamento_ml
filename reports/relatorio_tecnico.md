@@ -23,9 +23,9 @@ O objetivo é prever se um cliente de um banco irá subscrever um depósito a pr
 | Reprodutibilidade | 100% via `config/pipeline.yaml` + MLflow |
 
 ### Métricas de Negócio
-- **Custo por contato de campanha:** €5
-- **Receita por conversão:** €200
-- **Valor esperado por cliente:** `P(yes) × €200 − €5`
+- **Custo por contato de campanha:** $5
+- **Receita por conversão:** $200
+- **Valor esperado por cliente:** `P(yes) × $200 − $5`
 - **Trade-off:** Recall alto reduz oportunidades perdidas; Precisão alta reduz o custo de campanha. O limiar de decisão é configurável na interface.
 
 ---
@@ -205,8 +205,8 @@ O modelo champion é selecionado automaticamente pelo critério de maior F1-scor
 
 | Métrica | Definição | Monitoramento |
 |---------|-----------|---------------|
-| Custo por Contato | €5 por ligação realizada | Fixo |
-| Receita por Conversão | €200 por depósito subscrito | Fixo |
+| Custo por Contato | $5 por ligação realizada | Fixo |
+| Receita por Conversão | $200 por depósito subscrito | Fixo |
 | Valor Esperado por Cliente | `P(yes) × 200 − 5` | Calculado em tempo real |
 | Taxa de Conversão Prevista | Proporção de clientes classificados como `yes` | Interface Streamlit |
 | Precisão Operacional | Dos clientes contatados, quantos realmente converteram | Teste A/B pós-deploy |
@@ -214,9 +214,9 @@ O modelo champion é selecionado automaticamente pelo critério de maior F1-scor
 
 **Exemplo:** Em uma campanha com 1.000 clientes selecionados pelo modelo com precisão de 70%:
 - Conversões esperadas: 700
-- Receita: €140.000
-- Custo de campanha: €5.000
+- Receita: $140.000
+- Custo de campanha: $5.000
 - **ROI estimado: 2.700%**
 
-Sem modelo (taxa base ~53%): 530 conversões, receita €106.000, ROI: 2.020%.  
-**Ganho do modelo: +€34.000 por campanha de 1.000 clientes.**
+Sem modelo (taxa base ~53%): 530 conversões, receita $106.000, ROI: 2.020%.  
+**Ganho do modelo: +$34.000 por campanha de 1.000 clientes.**

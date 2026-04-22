@@ -140,7 +140,7 @@ def page_prediction():
             housing_label = st.selectbox("Financiamento Habitacional?", list(SIM_NAO_MAP.keys()))
         with col3:
             loan_label = st.selectbox("Empréstimo Pessoal?", list(SIM_NAO_MAP.keys()))
-            balance = st.number_input("Saldo Médio Anual (€)", value=1500, min_value=-10000, max_value=100000)
+            balance = st.number_input("Saldo Médio Anual ($)", value=1500, min_value=-10000, max_value=100000)
 
         st.subheader("Dados da Campanha")
         col4, col5, col6 = st.columns(3)
@@ -206,7 +206,7 @@ def page_prediction():
             cost = config["business_metrics"]["campaign_cost_per_contact"]
             revenue = config["business_metrics"]["revenue_per_conversion"]
             expected_value = prob * revenue - cost
-            st.metric("Valor Esperado da Campanha", f"€{expected_value:.0f}")
+            st.metric("Valor Esperado da Campanha", f"${expected_value:.0f}")
 
         if decision == "yes":
             st.success(f"Recomendação: CONTATAR este cliente. Probabilidade estimada: {prob:.1%}")
@@ -333,8 +333,8 @@ def page_monitoring():
     st.subheader("Métricas de Negócio")
     bm = config["business_metrics"]
     col_b1, col_b2, col_b3 = st.columns(3)
-    col_b1.metric("Custo por Contato", f"€{bm['campaign_cost_per_contact']:.0f}")
-    col_b2.metric("Receita por Conversão", f"€{bm['revenue_per_conversion']:.0f}")
+    col_b1.metric("Custo por Contato", f"${bm['campaign_cost_per_contact']:.0f}")
+    col_b2.metric("Receita por Conversão", f"${bm['revenue_per_conversion']:.0f}")
     col_b3.metric("Limiar de Decisão Padrão", f"{bm['decision_threshold']:.0%}")
     st.caption(
         "Estratégia de re-treinamento: monitorar KS-test semanalmente. "
